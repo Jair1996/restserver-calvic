@@ -8,7 +8,7 @@ import { dbConnection } from '../db/config.db.js';
 export class Server {
   constructor() {
     this.app = express();
-    this.port = process.env.PORT;
+    this.port = process.env.PORT || 8080;
     this.productPath = '/api/products';
 
     // Conectar a base de datos
