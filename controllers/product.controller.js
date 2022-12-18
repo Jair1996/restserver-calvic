@@ -12,4 +12,12 @@ const producFeaturedGet = async (req, res) => {
   res.status(200).json(products);
 };
 
-export { productGet, producFeaturedGet };
+const productGetById = async (req, res) => {
+  const { id } = req.params;
+
+  const product = await Product.findById(id);
+
+  res.status(200).json(product);
+};
+
+export { productGet, producFeaturedGet, productGetById };
