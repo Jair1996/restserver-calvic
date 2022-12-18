@@ -6,4 +6,10 @@ const productGet = async (req, res) => {
   res.status(200).json(products);
 };
 
-export { productGet };
+const producFeaturedGet = async (req, res) => {
+  const products = await Product.find({ featureProduct: true });
+
+  res.status(200).json(products);
+};
+
+export { productGet, producFeaturedGet };

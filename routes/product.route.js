@@ -1,9 +1,11 @@
 import { Router } from 'express';
 
-import { productGet } from '../controllers/product.controller.js';
+import { productGet, producFeaturedGet } from '../controllers/product.controller.js';
 
 const router = Router();
 
 router.get('/', productGet);
+
+router.get('/featureds', producFeaturedGet);
 
 export default router;
