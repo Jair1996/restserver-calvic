@@ -2,8 +2,6 @@ import Product from '../models/product.model.js';
 import Pedido from '../models/pedido.model.js';
 
 const pedidoPost = async (req, res) => {
-  console.log(req.body)
-  
   const { fecha, hora, products, tarjeta } = req.body;
 
   products.forEach(async (product) => {
