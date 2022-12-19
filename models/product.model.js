@@ -29,6 +29,9 @@ const ProductSchema = new Schema({
     type: Number,
     required: [true, 'El precio es obligatorio'],
   },
+  qty: {
+    type: Number,
+  },
   sizes: {
     type: Array,
     required: [true, 'Los tallas son obligatorias'],

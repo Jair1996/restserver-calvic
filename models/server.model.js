@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 
 import productRoutes from '../routes/product.route.js';
+import pedidoRoutes from '../routes/pedido.route.js';
 
 import { dbConnection } from '../db/config.db.js';
 
@@ -10,6 +11,7 @@ export class Server {
     this.app = express();
     this.port = process.env.PORT || 8080;
     this.productPath = '/api/products';
+    this.pedidoPath = '/api/pedido';
 
     // Conectar a base de datos
     this.conectarDB();
@@ -38,6 +40,7 @@ export class Server {
 
   routes() {
     this.app.use(this.productPath, productRoutes);
+    this.app.use(this.pedidoPath, pedidoRoutes);
   }
 
   listen() {
